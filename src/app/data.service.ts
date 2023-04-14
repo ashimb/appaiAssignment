@@ -7,12 +7,15 @@ import { HttpClient, HttpParams} from '@angular/common/http'
 export class DataService {
   constructor(private httpClient: HttpClient) {}
 
-  getUniversityData(searchText: string, type: string) {
+  fetchUniversityData(countryName: string, facultyName: string) {
     let searchParam = new HttpParams();
-    searchParam = searchParam.append('s', searchText);
-    searchParam = searchParam.append('type', type);
+
+   // countryName !==''? searchParam = searchParam.append('country', countryName) : '';
+
+    searchParam =searchParam.append('country', countryName);
+    searchParam = searchParam.append('name', facultyName);
     return this.httpClient.get(
-      'http://universities.hipolabs.com/search?name=science',
+      'http://universities.hipolabs.com/search?',
       { params: searchParam }
     );
   }

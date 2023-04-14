@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assignUni';
+
+  countryName:string ='';
+  facultyName:string ='';
+  searchUniversity(){
+    console.log(this.countryName,this.facultyName)
+  }
 }

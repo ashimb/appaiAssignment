@@ -1,1 +1,30 @@
 <app-university-list></app-university-list>
+
+<div class="container">
+  <div>
+    <h2>
+        {{'University List'}}
+    </h2>
+    <small  class="form-text text-muted">Enter Country Name & Faculty Name to view Data.  </small>
+</div>
+  <div class="searchBox">
+    <form>
+      <div class="form-group">
+        <label for="txtcountry">Country</label>
+        <input type="text" name="txtcountry" class="form-control" id="txtcountry" [(ngModel)]="countryName">
+      </div>
+      <div class="form-group">
+        <label for="txtFacultyName">Faculty Name</label>
+        <input type="text" name="txtFacultyName" class="form-control" id="txtFacultyName" [(ngModel)]="facultyName">
+        <small  class="form-text text-muted">for e.g science , medical </small>
+      </div>
+    </form>
+    <!-- <button type="submit" class="btn btn-primary" (click)="searchUniversity()" ><i class="bi bi-search">Search</i> </button> -->
+  </div>
+  <div>
+    <app-university-card
+    [countryName]="countryName"
+    [facultyName]="facultyName"
+    ></app-university-card>
+  </div>
+</div>
